@@ -13,16 +13,21 @@
     </div>
     {% set owner = sketch.get_owner() %}
     <div class="sketch-info">
-      <div class="d-flex justify-content-start align-items-center mw-60" style="max-width: 60%;">
+      <div class="d-flex justify-content-start align-items-center mw-60" style="max-width: 65%;">
         <div class="mr-1">
           {{ widgets.Avatar(member=owner, avatar_class="avatar-small") }}
         </div>
-        <div class="text-wrap">
-          <a class="button-links" href="{{get_profile_url(owner.username)}}">
-            <span class="sketch-creator">
-              {{ owner.full_name }}
-            </span>
-          </a>
+        <div className="d-flex justify-content-center align-items-center ">
+          <div class="text-wrap">
+            <a class="button-links" href="{{get_profile_url(owner.username)}}">
+              <p class="m-0 sketch-creator">
+                {{ owner.full_name }}
+              </p>
+            </a>
+          </div>
+          <div>
+            <p class="m-0 sketch-timestamp"> {{ sketch.timestamp.strftime('%d %b %Y at %H:%M') if sketch.timestamp is not none }} </p>
+          </div>
         </div>
       </div>
 

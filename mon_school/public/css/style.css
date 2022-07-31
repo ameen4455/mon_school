@@ -63,7 +63,13 @@
 }
 
 .sketch-title {
-	margin-bottom: 16px;
+	margin-bottom: 0.25rem;
+}
+
+.sketch-timestamp {
+  font-size: 0.75rem;
+  /* font-weight: 500; */
+  color: var(--text-color-light)
 }
 
 .sketch-creator {

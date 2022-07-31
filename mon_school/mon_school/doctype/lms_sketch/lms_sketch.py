@@ -12,6 +12,7 @@ import frappe
 import tempfile
 import os
 from frappe.model.document import Document
+from frappe.utils import now
 from ... import livecode
 
 DEFAULT_IMAGE = """
@@ -238,6 +239,7 @@ def save_sketch(name, title, code):
         doc.title = title
         doc.code = code
         doc.runtime = 'python-canvas'
+        doc.timestamp = now()
         doc.insert(ignore_permissions=True)
         status = "created"
     else:
